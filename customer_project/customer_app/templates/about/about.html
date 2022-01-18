@@ -1,0 +1,15 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+
+{% block content %} 
+<h1 style ="font-size: 15px;">About Section</h1>
+<p  style ="text-align: center; font-size: 50px;">Currently not available</p>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+
+    <script src="{% static 'js/about/about.js' %}"></script><!--to call in console-->
+    
+{% endblock %}

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout/layout.css' %}" />
+<head>
+    <title>{% block title %}Customer{% endblock %}</title>
+    {% block stylesheet %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+  
+    {% endblock %}
+</head>
+<!-- <body style="background-image: url('../../static/img/755326.jpg'); background-repeat: no-repeat;
+background-size: 300px 100px;"> -->
+    <body style="background-color:  #c2f0e6;"">
+        <header>
+            <!-- <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                        data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+                    <img style="max-width:52px; margin-top: -2px;"
+                        src="https://cdn.thebrandingjournal.com/wp-content/uploads/2019/05/chanel_logo_the_branding_journal.jpg">
+                </a>
+            </div> -->
+            <div class="container" style="background-color:  #80BEAF; width: 100%; height: 50px;">
+                <div class="top">
+                    <nav> 
+                        <ul>
+                            <li><a href="/">Home</a></li> 
+                            <li><a href="/about/">About</a></li>
+                            <li><a href="/order/">Order</a></li>
+                            <li><a href="/promo/">Promo</a></li>
+                        </ul>
+                    </nav>   
+                </div>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <!-- <footer>
+            <p>Author: Hege Refsnes</p>
+            <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+        </footer> -->
+
+        {% block javascript %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        {% endblock %}
+
+
+    </body>
+</html>

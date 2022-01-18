@@ -1,0 +1,81 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+
+{% block content %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/home.css' %}" /> 
+<!-- <button type="button" id="btn-alert">alert you</button> -->
+
+<div align="center"><!--to center div--> 
+	<div class="top">
+		<button type="button" id="btn-add" name="btn-add">Add New Customer</button>
+	</div>
+</div>
+<div align="center">
+	<div class="col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table border="1" width="100%" class="table">
+					<legend>List of Customers</legend>
+					<thead>
+						<tr>
+							<th style ="text-align: center;">First Name</th>
+							<th style ="text-align: center;">Last Name</th>
+							<th style ="text-align: center;">Email Address</th>
+							<th style ="text-align: center;">Birthday</th>
+							<th style ="text-align: center;">Action</th>
+						</tr>
+					</thead>
+					<tbody id="tbl-user"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>		
+<!-- The Modal -->
+<div id="modal-customer" class="modal fade" role="dialog"><!--role=dialog is the white box display-->
+	<div class="modal-dialog modal-md"><!--modal-sm is for the size of the box-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" style="width:20px; height: 20px;">&times;</button><!--to close modal-->
+                <h4 class="modal-title"><span id=spn-modal-title></span></h4>
+			</div>
+			<div style="height: 230px; padding: 10px; padding-bottom: 0px;">
+				<!-- <span onclick="document.getElementById('id01').style.display='none'"class="w3-button w3-display-center">&times;</span> -->
+				<form id="frm-customer">
+					<fieldset>
+						<div class="first">
+							<label for="fname" class="col-sm-3">First name:</label>
+							<input type="text" class="col-sm-8" id="fname" name="fname"><br><br>
+						</div>
+						<div class="last">
+							<label for="lname" class="col-sm-3">Last name:</label>
+						<input type="text" class="col-sm-8" id="lname" name="lname"><br><br>
+						</div>
+						<div class="email">
+							<label for="email" class="col-sm-3">Email Address:</label>
+							<input type="email" class="col-sm-8" id="email" name="email"><br><br>
+						</div>
+						<div class="birthday">
+							<label for="birthday" class="col-sm-3">Birthday:</label>
+							<input type="date" class="col-sm-8" id="birthday" name="birthday"><br><br>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btn-save" value="save">save</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div> 
+
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+
+    <script src="{% static 'js/home/home.js' %}"></script>
+    
+{% endblock %}

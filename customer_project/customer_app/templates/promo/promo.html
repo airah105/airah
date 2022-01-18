@@ -1,0 +1,15 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+
+{% block content %} 
+<h1 style ="font-size: 15px;">Promo Section</h1>
+<p  style ="text-align: center; font-size: 50px; color: #fff; min-height: 100vh;">Currently not available</p>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+
+    <script src="{% static 'js/promo/promo.js' %}"></script><!--to call in console-->
+    
+{% endblock %}
